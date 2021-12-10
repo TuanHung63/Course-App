@@ -1,0 +1,31 @@
+<mat-toolbar color="primary">
+    <div fxHide.gt-xs>
+      <button mat-icon-button (click)="onToggleSidenav()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <div>
+      <a routerLink="/">
+        <!-- <img src="../assets/images/logo.png" alt="Kuyn" width="20%">
+                   -->
+        Logo
+      </a>
+    </div>
+    <div fxFlex fxLayoutAlign="flex-end start" fxHide.xs>
+      <ul fxLayout="row" fxLayoutGap="5px" class="navigation-items">
+        <li *ngIf="!isAuth">
+          <a routerLink="/signup">Signup</a>
+        </li>
+        <li *ngIf="!isAuth">
+          <a routerLink="/login">Login</a>
+
+        </li>
+        <li *ngIf="isAuth">
+          <a routerLink="/training">Training</a>
+        </li>
+        <li *ngIf="isAuth">
+          <a (click)="onLogout()" style="cursor: pointer;" >Logout</a>
+        </li>
+      </ul>
+    </div>
+  </mat-toolbar>
